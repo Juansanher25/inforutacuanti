@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Significancia y Tamaño del Efecto</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        h1, h2, h3 { font-family: 'Merriweather', serif; }
+        .gradient-text {
+            background: linear-gradient(to right, #1d4ed8, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+        .transition-all { transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="text-slate-800 p-4 md:p-8">
+
+    <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+        
+        <!-- HEADER INFOGRAFÍA -->
+        <div class="bg-slate-900 text-white p-8 md:p-12 text-center relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-4 relative z-10">Más allá del Valor *p*</h1>
+            <p class="text-lg md:text-xl text-slate-300 relative z-10">Significancia Estadística vs. Significancia Práctica (Tamaño del Efecto)</p>
+            <div class="mt-6 inline-block bg-blue-600/30 border border-blue-400/50 rounded-full px-4 py-1 text-sm font-semibold backdrop-blur-sm relative z-10">
+                <i class="fas fa-chart-area mr-2 text-blue-300"></i>Guía Visual para Investigadores
+            </div>
+        </div>
+
+        <div class="p-8 md:p-12">
+            <!-- SECCIÓN 1: LA GRAN DIFERENCIA -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                
+                <!-- Significancia Estadística -->
+                <div class="bg-slate-50 rounded-xl p-6 border-t-4 border-slate-400 card-hover transition-all">
+                    <div class="w-12 h-12 bg-slate-200 text-slate-600 rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-dice"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-800 mb-2">1. Significancia Estadística</h2>
+                    <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">¿Es real o fue casualidad?</h3>
+                    <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                        Evaluada mediante el <strong>Valor <i>p</i></strong> (ej. <i>p</i> < 0.05). Nos dice si la diferencia observada entre dos grupos es estadísticamente válida o si pudo ocurrir simplemente por variaciones aleatorias.
+                    </p>
+                    <div class="bg-white p-3 rounded border border-slate-200 text-xs text-slate-500">
+                        <i class="fas fa-exclamation-triangle text-amber-500 mr-2"></i><strong>Peligro:</strong> Con muestras muy grandes (ej. encuestas masivas), casi cualquier diferencia mínima será "estadísticamente significativa".
+                    </div>
+                </div>
+
+                <!-- Significancia Práctica -->
+                <div class="bg-blue-50 rounded-xl p-6 border-t-4 border-blue-600 card-hover transition-all shadow-md">
+                    <div class="w-12 h-12 bg-blue-200 text-blue-700 rounded-full flex items-center justify-center text-2xl mb-4">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-blue-900 mb-2">2. Significancia Práctica</h2>
+                    <h3 class="text-sm font-bold text-blue-600 uppercase tracking-wider mb-4">¿Importa realmente en la vida real?</h3>
+                    <p class="text-slate-700 mb-4 text-sm leading-relaxed">
+                        Evaluada mediante el <strong>Tamaño del Efecto</strong> (*Effect Size*). Nos dice la magnitud de la diferencia. Responde a la pregunta gerencial: ¿Vale la pena el costo de implementar esta mejora?
+                    </p>
+                    <div class="bg-white p-3 rounded border border-blue-200 text-xs text-blue-800 font-medium">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i><strong>El objetivo real:</strong> Un buen estudio busca resultados que sean TANTO estadísticamente reales COMO prácticamente útiles.
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECCIÓN 2: EL TAMAÑO DEL EFECTO (FÓRMULA Y MÉTRICA) -->
+            <div class="bg-slate-900 text-white rounded-2xl p-8 mb-16 shadow-2xl relative overflow-hidden">
+                <!-- Decorative elements -->
+                <div class="absolute -right-10 -top-10 text-white/5 text-9xl"><i class="fas fa-square-root-variable"></i></div>
+                
+                <h2 class="text-2xl font-bold mb-6 text-blue-300 relative z-10"><i class="fas fa-ruler-combined mr-3"></i>Midiendo el Tamaño del Efecto (d de Cohen)</h2>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center relative z-10">
+                    <div>
+                        <p class="text-slate-300 text-sm mb-4">
+                            La métrica más común en ingeniería y ciencias es la <strong><i>d</i> de Cohen</strong>. Mide la diferencia entre las medias del grupo experimental y el de control, pero estandarizada (dividida) por la desviación estándar combinada.
+                        </p>
+                        <div class="bg-black/30 p-4 rounded-xl border border-white/10 text-center mb-4">
+                            <div class="text-xl overflow-x-auto text-blue-200">
+                                $$d = \frac{\bar{x}_1 - \bar{x}_2}{s_{combinada}}$$
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold text-white mb-3 text-sm uppercase tracking-wide border-b border-white/20 pb-2">Regla empírica de Interpretación:</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <div class="w-16 h-2 bg-slate-600 rounded-full mr-4 overflow-hidden"><div class="bg-green-400 h-full w-1/4"></div></div>
+                                <span class="font-mono text-green-400 mr-2">d ≈ 0.2</span> <span class="text-sm text-slate-300">Efecto Pequeño (Difícil de notar a simple vista)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-16 h-2 bg-slate-600 rounded-full mr-4 overflow-hidden"><div class="bg-yellow-400 h-full w-1/2"></div></div>
+                                <span class="font-mono text-yellow-400 mr-2">d ≈ 0.5</span> <span class="text-sm text-slate-300">Efecto Mediano (Diferencia clara)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <div class="w-16 h-2 bg-slate-600 rounded-full mr-4 overflow-hidden"><div class="bg-red-500 h-full w-full"></div></div>
+                                <span class="font-mono text-red-400 mr-2">d ≥ 0.8</span> <span class="text-sm text-slate-300">Efecto Grande (Impacto masivo y evidente)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: EJEMPLOS DISCIPLINARES -->
+            <h2 class="text-2xl font-bold mb-6 text-center"><span class="gradient-text">El Análisis en la Práctica</span></h2>
+            
+            <div class="space-y-6">
+                <!-- Ing -->
+                <div class="flex flex-col md:flex-row bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all cursor-pointer group">
+                    <div class="bg-blue-600 text-white w-full md:w-48 p-6 flex flex-col justify-center items-center group-hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-industry text-3xl mb-2"></i>
+                        <span class="font-bold tracking-wide">INGENIERÍA</span>
+                    </div>
+                    <div class="p-6 flex-1">
+                        <h4 class="font-bold text-slate-800 mb-2">Nuevo Catalizador vs. Tradicional</h4>
+                        <p class="text-sm text-slate-600 mb-3">El nuevo catalizador aumenta el rendimiento un 0.5% con un valor <i>p</i> = 0.01 (Es estadísticamente significativo, la mejora es real).</p>
+                        <div class="bg-slate-50 p-3 rounded border border-slate-200">
+                            <p class="text-sm"><strong class="text-blue-700">El Veredicto (Tamaño del Efecto):</strong> El tamaño del efecto es <i>d = 0.15</i> (Pequeño). Aunque la mejora es real, cambiar todos los reactores de la planta cuesta millones. <strong>No hay significancia práctica.</strong> La mejora no paga la inversión.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eco -->
+                <div class="flex flex-col md:flex-row bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all cursor-pointer group">
+                    <div class="bg-emerald-600 text-white w-full md:w-48 p-6 flex flex-col justify-center items-center group-hover:bg-emerald-700 transition-colors">
+                        <i class="fas fa-chart-line text-3xl mb-2"></i>
+                        <span class="font-bold tracking-wide">ECONOMÍA</span>
+                    </div>
+                    <div class="p-6 flex-1">
+                        <h4 class="font-bold text-slate-800 mb-2">Capacitación Financiera a Microempresas</h4>
+                        <p class="text-sm text-slate-600 mb-3">Las empresas capacitadas aumentaron sus ganancias en un 12% frente al grupo control. <i>p</i> = 0.04.</p>
+                        <div class="bg-slate-50 p-3 rounded border border-slate-200">
+                            <p class="text-sm"><strong class="text-emerald-700">El Veredicto (Tamaño del Efecto):</strong> El tamaño del efecto es <i>d = 0.85</i> (Grande). La intervención es económica de implementar y el impacto en la desviación estándar de las ganancias es enorme. <strong>Alta significancia práctica.</strong> Política pública recomendada.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Arq -->
+                <div class="flex flex-col md:flex-row bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-all cursor-pointer group">
+                    <div class="bg-amber-600 text-white w-full md:w-48 p-6 flex flex-col justify-center items-center group-hover:bg-amber-700 transition-colors">
+                        <i class="fas fa-city text-3xl mb-2"></i>
+                        <span class="font-bold tracking-wide">ARQUITECTURA</span>
+                    </div>
+                    <div class="p-6 flex-1">
+                        <h4 class="font-bold text-slate-800 mb-2">Aislante Acústico A vs. Aislante B</h4>
+                        <p class="text-sm text-slate-600 mb-3">El Aislante A reduce el ruido 2 decibeles más que el B. El estudio se hizo en 10,000 cuartos, por lo que <i>p</i> < 0.001 (Altamente significativo).</p>
+                        <div class="bg-slate-50 p-3 rounded border border-slate-200">
+                            <p class="text-sm"><strong class="text-amber-700">El Veredicto (Tamaño del Efecto):</strong> El oído humano apenas percibe 2 decibeles de diferencia. El tamaño del efecto es diminuto (<i>d = 0.1</i>). El Aislante A cuesta el triple. <strong>Nula significancia práctica.</strong> El arquitecto debería elegir el Aislante B.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FOOTER INFOGRAFÍA -->
+        <div class="bg-slate-100 p-6 text-center border-t border-slate-200">
+            <p class="text-xs text-slate-500 font-medium">Material Didáctico - Metodología de la Investigación Cuantitativa</p>
+            <p class="text-xs text-slate-400 mt-1">Basado en principios de Hernández-Sampieri, Leedy & Ormrod.</p>
+        </div>
+    </div>
+
+</body>
+</html>
